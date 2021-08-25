@@ -69,15 +69,16 @@ export default function TextForm(props) {
                     <h1>{props.heading} </h1>
                     <textarea  style={{backgroundColor:props.mode==='light'?'white':'#6c757d',color:props.mode==='light'?'#6c757d':'white'}} className="form-control" id="myBox" rows="5" value={text} onChange={onhandlechange} ></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpClick} >Convert to Uppercase</button>
+                
+                <button className="btn btn-primary mx-2  my-1" style={{backgroundColor:props.mode==='light'?'black':'white',color:props.mode==='light'?'white':'black'}}  onClick={handleUpClick} >Convert to Uppercase</button>
 
-                <button className="btn btn-primary mx-2" onClick={handleLoClick} >Convert to Lowercase</button>
+                <button className="btn btn-primary mx-2  my-1" onClick={handleLoClick} >Convert to Lowercase</button>
 
-                <button className="btn btn-primary mx-2" onClick={trim} >Trim space</button>
+                <button className="btn btn-primary mx-2  my-1" onClick={trim} >Trim space</button>
 
-                <button className="btn btn-primary mx-2" onClick={clear} >Clear Text</button>
+                <button className="btn btn-primary mx-2  my-1" onClick={clear} >Clear Text</button>
 
-                <button className="btn btn-primary mx-2" onClick={copy} >Copy Text</button>
+                <button className="btn btn-primary mx-2  my-1" onClick={copy} >Copy Text</button>
 
                 {/* to change color using button */}
                 {/* <textarea  style={{backgroundColor:props.mode==='light'?'white':'#6c757d',color:colors}} */}
@@ -92,7 +93,7 @@ export default function TextForm(props) {
                     <p>{text.length>1?text.split(' ').length:0} words and {text.length} charcaters</p>
                     <p>{text.length>1?0.008*text.split(' ').length:0} minutes read</p> 
                 <h2>Preview</h2> 
-               <p>{text.length>0?text:"Enter something in the text box"}</p>
+               <p>{text.length>0?text:"Enter something in the Text Box"}</p>
             </div>
         </>
     )
