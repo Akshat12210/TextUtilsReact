@@ -10,6 +10,7 @@ export default function App() {
 
   const [mode, setMode] = useState('light') ;
   const [alert, setalert] = useState(null);
+  const [modeText, setmodeText] = useState("Enable Dark Mode");
 
 
   const showAlert = (message,type) =>{
@@ -25,18 +26,20 @@ export default function App() {
   const toggleMode = () =>{
     if(mode==='light'){
       setMode('dark');
+      setmodeText("Disable Dark Mode");
       document.body.style.background='#6c757d';
       showAlert("dark mode has been enabled","success");
     }
     else{
       setMode('light');
+      setmodeText("Enable Dark Mode");
       document.body.style.background='white';
       showAlert("light mode has been enabled","success");
     }
   } 
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggle={toggleMode}/>
+      <Navbar title="TextUtils" mode={mode} toggle={toggleMode} modeText={modeText}/>
       {/* <Navbar /> */}
       <Alert alert={alert}/>
       <div className="container my-3">
