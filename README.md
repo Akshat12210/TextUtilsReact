@@ -1,4 +1,5 @@
-#https://textutils1.netlify.app/
+Project deployed on netlify
+# https://textutils1.netlify.app/
 
 
 # Getting Started with Create React App
