@@ -29,12 +29,14 @@ export default function App() {
       setmodeText("Disable Dark Mode");
       document.body.style.background='#6c757d';
       showAlert("dark mode has been enabled","success");
+      document.title= "TextUtils - Dark Mode";
     }
     else{
       setMode('light');
       setmodeText("Enable Dark Mode");
       document.body.style.background='white';
       showAlert("light mode has been enabled","success");
+      document.title= "TextUtils";
     }
   } 
   return (
