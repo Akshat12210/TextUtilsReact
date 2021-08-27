@@ -64,10 +64,10 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className="container" style={{color:props.mode==='light'?'#6c757d':'white'}} >
+            <div className="container" style={{color:props.mode==='light'?'black':'#EEEEEE'}} >
                 <div className="mb-3">
                     <h1>{props.heading} </h1>
-                    <textarea  style={{backgroundColor:props.mode==='light'?'white':'#6c757d',color:props.mode==='light'?'#6c757d':'white'}} className="form-control" id="myBox" rows="5" value={text} onChange={onhandlechange} ></textarea>
+                    <textarea  style={{backgroundColor:props.mode==='light'?'white':'#6c757d',color:props.mode==='light'?'black':'#EEEEEE'}} className="form-control" id="myBox" rows="5" value={text} onChange={onhandlechange} ></textarea>
                 </div>
                 <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick} >Convert to Uppercase</button>
 
@@ -87,7 +87,7 @@ export default function TextForm(props) {
                 
             </div>
 
-            <div className="container my-3" style={{color:props.mode==='light'?'#6c757d':'white'}}>
+            <div className="container my-3" style={{color:props.mode==='light'?'black':'#EEEEEE'}}>
                  <h2>Text Summary</h2>
                     <p>{text.length>1?text.split(' ').length:0} words and {text.length} charcaters</p>
                     <p>{text.length>1?0.008*text.split(' ').length:0} minutes read</p> 
