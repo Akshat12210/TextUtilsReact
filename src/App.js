@@ -51,6 +51,7 @@ export default function App() {
     <Router>
       <Navbar title="TextUtils" mode={mode} toggle={toggleMode} modeText={modeText}/>
       {/* <Navbar /> */}
+      <Alert alert={alert}/>
       <Switch>
           <Route exact path="/about">
             <About />
@@ -60,7 +61,6 @@ export default function App() {
           </Route>
         </Switch>
         </Router>  
-      <Alert alert={alert}/>
       <div className="container my-3">
        {/* <About />  */}
       </div>
