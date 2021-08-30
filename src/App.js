@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Navbar from './Components/Navbar';
 import Alert from './Components/Alert';
 import TextForm from './Components/TextForm';
-// import About from './Components/About';
+import About from './Components/About';
 
 
 export default function App() {
@@ -45,8 +45,8 @@ export default function App() {
       {/* <Navbar /> */}
       <Alert alert={alert}/>
       <div className="container my-3">
-      <TextForm  heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert}/>
-       {/* <About />  */}
+      {/* <TextForm  heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert}/> */}
+       <About mode={mode}/> 
       </div>
       
 
