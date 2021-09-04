@@ -45,8 +45,8 @@ export default function App() {
       {/* <Navbar /> */}
       <Alert alert={alert}/>
       <div className="container my-3">
-      {/* <TextForm  heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert}/> */}
-       <About mode={mode}/> 
+      <TextForm  heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert}/>
+        {/* <About mode={mode}/> */}
       </div>
       
 
