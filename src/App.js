@@ -46,7 +46,7 @@ export default function App() {
       <Alert alert={alert}/>
       <div className="container my-3">
       <TextForm  heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert}/>
-//        <About mode={mode}/> 
+        {/* <About mode={mode}/> */}
       </div>
       
 
