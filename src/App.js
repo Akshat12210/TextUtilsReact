@@ -17,7 +17,8 @@ export default function App() {
 
   const [mode, setMode] = useState('light') ;
   const [alert, setalert] = useState(null);
-  const [modeText, setmodeText] = useState("Enable Dark Mode");
+  // const[col,setcol]=useState();
+ // const [modeText, setmodeText] = useState("Enable Dark Mode");
 
 
   const showAlert = (message,type) =>{
@@ -30,17 +31,28 @@ export default function App() {
     }, 1000);
       
   }
-  const toggleMode = () =>{
+  const removebgcolor =() => {
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-warning');
+  }
+  const toggleMode = (cls) =>{
+    console.log(cls);
+    // setcol(cls);
+    removebgcolor();
+    document.body.classList.add('bg-'+cls);
     if(mode==='light'){
       setMode('dark');
-      setmodeText("Disable Dark Mode");
+      // setmodeText("Disable Dark Mode");
       document.body.style.background='#6c757d';
       showAlert("dark mode has been enabled","success");
       document.title= "TextUtils - Dark Mode";
     }
     else{
       setMode('light');
-      setmodeText("Enable Dark Mode");
+      // setmodeText("Enable Dark Mode");
       document.body.style.background='white';
       showAlert("light mode has been enabled","success");
       document.title= "TextUtils";
@@ -49,7 +61,7 @@ export default function App() {
   return (
     <>
     <Router>
-      <Navbar title="TextUtils" mode={mode} toggle={toggleMode} modeText={modeText}/>
+      <Navbar title="TextUtils" mode={mode} toggle={toggleMode}/>
       {/* <Navbar /> */}
       <Alert alert={alert}/>
       <Switch>
