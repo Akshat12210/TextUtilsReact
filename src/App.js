@@ -4,7 +4,8 @@ import Navbar from './Components/Navbar';
 import Alert from './Components/Alert';
 import TextForm from './Components/TextForm';
 import About from './Components/About';
-
+import { Offline, Online } from "react-detect-offline";
+import Connection from './Components/Connection';
 
 export default function App() {
 
@@ -41,6 +42,7 @@ export default function App() {
   } 
   return (
     <>
+    <Online>
       <Navbar title="TextUtils" mode={mode} toggle={toggleMode} modeText={modeText}/>
       {/* <Navbar /> */}
       <Alert alert={alert}/>
@@ -48,7 +50,11 @@ export default function App() {
       <TextForm  heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert}/>
         {/* <About mode={mode}/> */}
       </div>
-      
+      </Online>
+      <Offline>
+        <p>Please check your internet connection</p>
+        <Connection />
+      </Offline>
 
     </>
   );
