@@ -20,7 +20,7 @@ export default function App() {
   const [mode, setMode] = useState('light');
   const [alert, setalert] = useState(null);
   // const[col,setcol]=useState();
-  // const [modeText, setmodeText] = useState("Enable Dark Mode");
+  const [modeText, setmodeText] = useState("Enable Dark Mode");
 
 
   const showAlert = (message, type) => {
@@ -33,18 +33,9 @@ export default function App() {
     }, 1000);
 
   }
-  const removebgcolor = () => {
-    document.body.classList.remove('bg-light');
-    document.body.classList.remove('bg-dark');
-    document.body.classList.remove('bg-success');
-    document.body.classList.remove('bg-danger');
-    document.body.classList.remove('bg-warning');
-  }
-  const toggleMode = (cls) => {
-    console.log(cls);
-    // setcol(cls);
-    removebgcolor();
-    document.body.classList.add('bg-' + cls);
+  
+  const toggleMode = () => {
+  
     if (mode === 'light') {
       setMode('dark');
       setmodeText("Disable Dark Mode");
@@ -63,7 +54,8 @@ export default function App() {
   return (
     <>
       <Router>
-        <Navbar title="TextUtils" mode={mode} toggle={toggleMode} />
+        <Online>
+        <Navbar title="TextUtils" mode={mode} toggle={toggleMode} modeText={modeText} />
         {/* <Navbar /> */}
         <Alert alert={alert} />
         <Switch>
@@ -74,6 +66,11 @@ export default function App() {
             <TextForm heading="Enter the text to Analyze below" mode={mode} showAlert={showAlert} />
           </Route>
         </Switch>
+        </Online>
+        <Offline>
+          <p>Please check your internet connection</p>
+          <Connection />
+        </Offline>
       </Router>
       <div className="container my-3">
         {/* <About />  */}
