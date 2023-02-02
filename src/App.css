@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.footer:hover {
+  display: inline-block;
+  background-color: #c3acd0;
+  transform: scale(1.2) rotate(-10deg);
+  transition: 400ms;
+  border-radius: 10px;
+  color: black !important;
+  padding: 4px;
+}
+
